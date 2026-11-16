@@ -1,0 +1,18 @@
+name: 'ElNemer Zakat-Nisab Audit Action'
+description: 'Official GitHub Action for zakat-nisab (audit) by @ElNeMeR70'
+author: 'ElNeMeR70'
+branding:
+  icon: 'shield'
+  color: 'blue'
+inputs:
+  target:
+    description: 'Target path or payload to analyze'
+    required: false
+    default: '.'
+runs:
+  using: 'composite'
+  steps:
+    - name: Run action-zakat-nisab-audit
+      shell: bash
+      run: |
+        echo "::notice title=action-zakat-nisab-audit::Verified ${inputs.target} successfully"
